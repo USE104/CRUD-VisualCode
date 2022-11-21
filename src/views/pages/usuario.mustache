@@ -1,0 +1,43 @@
+{{>partials/header}}
+<center>
+
+<img src="https://flowti.com.br/storage/blog/21445120210408606f795327265.jpeg"/>
+<br></br>
+
+<h1>Banco de Dados de Usuários</h1>
+<br>
+<h3>Tabela de Usuários</h3>
+
+<table border="5" width="100%">
+
+    <tr>
+        <th><img src="https://icons.iconarchive.com/icons/custom-icon-design/pretty-office-10/24/Numbers-icon.png"/> ID</th>
+        <th><img src="https://icons.iconarchive.com/icons/graphicloads/flat-finance/32/name-card-icon.png"/> Nome</th>
+        <th><img src="https://icons.iconarchive.com/icons/zerode/plump/32/Mail-icon.png"/> Email</th>
+        <th><img src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Actions-games-config-theme-icon.png"/> Ações</th>
+    </tr>
+
+
+    {{#users}}
+
+        <tr class="conteudo">
+            <td>{{id}}</td>
+            <td>{{nome}}</td>
+            <td>{{email}}</td>
+            
+            <td>
+                <a href="/editar/{{id}}"onclick="return alert('Os Dados serão alterados')"><img src="https://cdn-icons-png.flaticon.com/512/3602/3602041.png" height="25px"/></a>
+                <a href="/excluir/{{id}}"onclick="return confirm('Tem certeza quer deletar')"><img src="https://cdn-icons-png.flaticon.com/512/6301/6301508.png"height="25"/></a>
+            </td>
+
+        </tr>
+
+    {{/users}}
+
+</table>
+<br>
+    <button><a href="/cadastrar">Adicionar Usuários</a></button>
+
+</center>
+
+{{>partials/footer}}
